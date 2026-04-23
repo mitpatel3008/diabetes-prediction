@@ -120,14 +120,14 @@ diabetes-progression-predictor/
 
 ## 🤖 ML Models Compared
 
-| Model | Type | CV Accuracy |
+| Model | Type | Test Accuracy |
 |---|---|---|
 | Logistic Regression | Baseline linear | ~77% |
-| Decision Tree | Rule-based | ~74% |
-| Random Forest | Ensemble | ~82% |
-| XGBoost | Gradient Boosting | ~83% |
-| Support Vector Machine | Kernel-based | ~80% |
-| K-Nearest Neighbors | Distance-based | ~76% |
+| Decision Tree | Rule-based | ~88% |
+| Random Forest | Ensemble | ~88% |
+| XGBoost | Gradient Boosting | ~87% |
+| Support Vector Machine | Kernel-based | ~84% |
+| K-Nearest Neighbors | Distance-based | ~77% |
 
 ---
 
@@ -135,11 +135,11 @@ diabetes-progression-predictor/
 
 | Metric | Best Model Score |
 |---|---|
-| Accuracy | ~85% |
+| Accuracy | ~88% |
 | Precision | ~83% |
-| Recall | ~83% |
+| Recall | ~91% |
 | F1-Score | ~84% |
-| ROC-AUC | ~90% |
+| ROC-AUC | ~95% |
 
 > **Key Finding:** Glucose is the most important feature,
 > followed by BMI and Age — consistent with medical literature.
