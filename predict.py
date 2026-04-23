@@ -1,27 +1,15 @@
-# =============================================================
-# predict.py — Command Line Diabetes Prediction Script
-# =============================================================
-# Usage: python predict.py
-# This script loads the trained model and scaler,
-# asks the user for medical inputs, and returns a prediction.
-# =============================================================
 
 import numpy as np
 import joblib
 import os
 
-# -------------------------------------------------------
-# Load saved model, scaler and feature names
-# -------------------------------------------------------
+
 BASE_DIR     = os.path.dirname(os.path.abspath(__file__))
 model        = joblib.load(os.path.join(BASE_DIR, 'models', 'final_best_model.pkl'))
 scaler       = joblib.load(os.path.join(BASE_DIR, 'models', 'scaler.pkl'))
 feature_names = joblib.load(os.path.join(BASE_DIR, 'models', 'feature_names.pkl'))
 
-# -------------------------------------------------------
-# Feature input ranges for validation
-# (min, max, description)
-# -------------------------------------------------------
+
 FEATURE_INFO = {
     'Pregnancies'             : (0,  20,  'Number of pregnancies'),
     'Glucose'                 : (50, 250, 'Plasma glucose concentration (mg/dL)'),
@@ -31,7 +19,7 @@ FEATURE_INFO = {
     'BMI'                     : (10, 70,  'Body Mass Index (kg/m²)'),
     'DiabetesPedigreeFunction': (0.05, 2.5,'Diabetes pedigree function score'),
     'Age'                     : (10, 100, 'Age in years'),
-    # Engineered features (auto-calculated — not asked from user)
+    
 }
 
 def get_engineered_features(inputs):
@@ -141,9 +129,6 @@ def display_result(inputs, prediction, probability):
     print("=" * 55)
 
 
-# -------------------------------------------------------
-# Main execution
-# -------------------------------------------------------
 if __name__ == '__main__':
     print("\n  🩺 Early Diabetes Progression Prediction System")
     print("  AI Lab Project — 6th Semester\n")
